@@ -10,8 +10,14 @@ const NavBar = () => {
      so we are going to create a a state returnning false when the scroll are not moving and return true when it is moving
   */
   const [isScrolled, setIsScrolled] = useState(false);
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true );
+    console.log(setIsScrolled)
+    return () => (window.onscroll = null);
+  };
+  
   return (
-    <div className="navbar">
+    <div className={isScrolled ? "navbar scrolled": "navbar"}>
         <div className="container">
             <div className="left">
                 <img src={logo} alt="logo" />
