@@ -1,5 +1,5 @@
 import "./App.scss";
-import Home from './home/Home';
+import Home from './page/home/Home';
 
 const App = () => {
   return <Home/>
